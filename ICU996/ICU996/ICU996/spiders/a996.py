@@ -11,7 +11,7 @@ class A996Spider(scrapy.Spider):
     def start_requests(self):
         data = pd.read_csv('stargazers.csv')
         for url in data.iloc[35000:39991]['url']:
-            r_url = url + '?access_token=xxxxxxxxxxxxxxx'
+            r_url = url + '?access_token=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'
             yield scrapy.Request(url=r_url, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
